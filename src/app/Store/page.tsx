@@ -1,8 +1,13 @@
+import Container from "@/src/components/Container";
+
  function Store() {
     return (
-        <div>
+        <Container>
             <h1>store</h1>
-        </div>
+
+        </Container>
+            
+        
     )
 }
 

@@ -1,16 +1,53 @@
+"use client"
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Container from "./Container";
  
  function Navbar() {
+
+    const pathname = usePathname()
+
+
+    const newlink = [
+
+        {
+            href:"/",
+            title:"Home"
+
+        },
+        {
+             href:"/Store",
+            title:"Store"
+
+        }
+    ]
     return(
 
-        <div>
+        <nav className="shadow p-4">
+            <Container>
 
-            <ul>
-                <Link href="/"><li>Home</li></Link>
-                <Link href="/Store"><li>store</li></Link>
-            </ul>
+             {newlink.map((item) => (
+                    
+                     <Link className={`mr-4  ${pathname === item.href ? "text-sky-500" : "" }`} href={item.href} key={item.href}>
+                        {item.title}
+                        </Link>
 
-        </div>
+                ))}
+            </Container>
+
+  
+
+
+
+
+        </nav>
+
+            
+           
+            
+
+        
     )
         
  
